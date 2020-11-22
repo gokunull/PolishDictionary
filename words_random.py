@@ -4,8 +4,8 @@ import codecs
 import datetime
 wordslist = ['color_words','comparisons_words','exceptions_words','family_words','general_words',
             'mood_words','numbers','numbers_x10','profession_words', 'hobby_words', 'shops_words',
-            'days_words', 'time_of_day_words']
-filename = wordslist[3]
+            'days_words', 'time_of_day_words', 'food_words',]
+filename = wordslist[10]
 logname = datetime.datetime.now().strftime("%m.%d-%H;%M;%S")
 logfile = codecs.open(f"C:/Other/PythonProject/dictionary/log/{logname}_{filename}.txt", "w", "utf_8_sig")
 words = codecs.open(f"C:/Other/PythonProject/dictionary/words/{filename}.txt", "r", "utf_8_sig")
@@ -14,7 +14,7 @@ random.shuffle(unique_words)
 random.SystemRandom().shuffle(unique_words)
 for i in unique_words:
     print(i)
-    time.sleep(17)
+    time.sleep(15)
 logfile.writelines("%s\n" % i for i in unique_words)
 logfile.close()
 
@@ -23,4 +23,4 @@ logfile.close()
 # general_words.txt, mood_words.txt,
 # numbers.txt, numbers_x10.txt,
 # profession_words.txt, hobby_words.txt, shops_words.txt,
-# days_words.txt, time_of_day_words.txt, ...
+# days_words.txt, time_of_day_words.txt, food_words.txt...
