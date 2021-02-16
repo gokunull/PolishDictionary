@@ -5,8 +5,9 @@ import datetime
 wordslist = ['color_words','comparisons_words','exceptions_words','family_words','general_words',
             'mood_words','numbers','numbers_x10','profession_words', 'hobby_words', 'shops_words',
             'days_words', 'time_of_day_words', 'food_words', 'city_words', 'route_words', 'weekend_words',
-            'house_words', 'furniture_words', 'kitchen_words', 'bathroom_words', 'human_words']
-filename = wordslist[20]
+            'house_words', 'furniture_words', 'kitchen_words', 'bathroom_words', 'human_words', 
+            'sickness_words']
+filename = wordslist[21]
 logname = datetime.datetime.now().strftime("%m.%d-%H;%M;%S")
 logfile = codecs.open(f"C:/Other/PythonProject/dictionary/log/{logname}_{filename}.txt", "w", "utf_8_sig")
 words = codecs.open(f"C:/Other/PythonProject/dictionary/words/{filename}.txt", "r", "utf_8_sig")
@@ -15,7 +16,7 @@ random.shuffle(unique_words)
 random.SystemRandom().shuffle(unique_words)
 for i in unique_words:
     print(i)
-    time.sleep(20)
+    time.sleep(25)
 logfile.writelines("%s\n" % i for i in unique_words)
 logfile.close()
 
@@ -27,4 +28,4 @@ logfile.close()
 # days_words.txt, time_of_day_words.txt, food_words.txt,
 # city_words.txt, route_words.txt, weekend_words.txt,
 # house_words.txt, furniture_words.txt, kitchen_words.txt,
-# bathroom_words.txt, human_words.txt...
+# bathroom_words.txt, human_words.txt, sickness_words.txt...
